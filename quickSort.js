@@ -1,7 +1,4 @@
 /**
- * Created by Administrator on 2017/7/17.
- */
-/**
  * 快排算法思想：
  * 取到数组的首元素，然后逐个比较小的放左边大的放右边，直到全部比完，完成一次比较
  * 再对左右两边的子数组，执行上述过程，递归直到子数组中只有一个元素为止。
@@ -59,8 +56,9 @@ function quickes6(arr) {
     return [
         ...quickes6(rest.filter(x => x < pivot)),
         pivot,
-        ...quickes6(rest.filter(x => x >= pivot))
-]
+        ..quickes6(rest.filter(x => x >= pivot))
+    ]
 }
+
 let arr = [5,1,9,3,7,4,8,6,2]
 console.log(quickes6(arr))
