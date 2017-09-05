@@ -5,6 +5,12 @@
  *算法思想：将数组按照大的间隔进行比较，做插入排序
  * 将间隔缩小，做插入排序
  * 直至间隔为1.
+ *
+ * 就是分区 + 插入排序。
+ *
+ * 问题核心有两个：插入的间值选取，插入排序
+ * 原始的gap = log2(n+1)下取整
+ * 每次的gap变化有个公式可以计算。直接除以2也挺好的。
  * @param arr
  * @returns {*}
  */
@@ -16,6 +22,7 @@ function shellSort(arr) {
     while(gap < len/5) {          //动态定义间隔序列
         gap =gap*5+1;
     }
+	
     for (gap; gap > 0; gap = Math.floor(gap/2)) {
         for (var i = gap; i < len; i++) {
             temp = arr[i]; //无序数
